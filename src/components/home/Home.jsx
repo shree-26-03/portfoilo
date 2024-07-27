@@ -1,41 +1,40 @@
-import React, { useEffect } from 'react';
-import './Home.css';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from "react";
+import "./Home.css";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
 
-  useEffect(() => { 
-    const cards = document.querySelectorAll('.card');
+  useEffect(() => {
+    const cards = document.querySelectorAll(".card");
 
     cards.forEach((card, index) => {
       setTimeout(() => {
-        card.classList.add('zoom-in');
+        card.classList.add("zoom-in");
       }, index * 100);
     });
   }, []);
 
   const aboutClick = () => {
-    navigate('/about');
+    navigate("/about");
   };
 
   const resumeClick = () => {
-    navigate('/resume');
+    navigate("/resume");
   };
 
   const projectClick = () => {
-    navigate('/projects');
+    navigate("/projects");
   };
 
   const contactClick = () => {
-    navigate('/contact');
+    navigate("/contact");
   };
 
   return (
     <>
-      <div className='home'>
-
-        <div className='card' id='about' onClick={aboutClick}>
+      <div className="home">
+        <div className="card" id="about" onClick={aboutClick}>
           <div className="img_box">
             <img src="src\assets\image.png" alt="" />
           </div>
@@ -43,7 +42,7 @@ const Home = () => {
             <h2> Hey, I'm Suvendu </h2>
 
             <div className="desc">
-              <p> Web Developer </p>
+              <p> Java full Stack Developer </p>
               <span>
                 <i className="ri-arrow-right-double-fill"></i>
               </span>
@@ -51,38 +50,35 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="card" id='resume' onClick={resumeClick}>
+        <div className="card" id="resume" onClick={resumeClick}>
           <i className="ri-file-list-3-line"></i>
           <h2> Resume</h2>
         </div>
 
-        <div className="card" id='project' onClick={projectClick}>
+        <div className="card" id="project" onClick={projectClick}>
           <i className="ri-mac-line"></i>
           <h2>My Work</h2>
         </div>
 
-        <div className="card" id='contact' onClick={contactClick}>
+        <div className="card" id="contact" onClick={contactClick}>
           <i className="ri-contacts-book-3-line"></i>
           <h2>Contact Me</h2>
         </div>
 
-        <div className="card" id='tech'>
+        <div className="card" id="tech">
           <h2>Technologies I Like The Most</h2>
           <div className="icons">
+            <img src="src\assets\icons\java.svg" alt="" />
             <img src="src\assets\icons\javascript.svg" alt="" />
+            <img src="src\assets\icons\mysql.svg" alt="" />
             <img src="src\assets\icons\html.svg" alt="" />
             <img src="src\assets\icons\css.svg" alt="" />
             <img src="src\assets\icons\react.svg" alt="" />
-            <img src="src\assets\icons\redux.svg" alt="" />
-            <img src="src\assets\icons\sass.svg" alt="" />
             <img src="src\assets\icons\tailwindcss.svg" alt="" />
-            <img src="src\assets\icons\nodejs.svg" alt="" />
-            <img src="src\assets\icons\express.svg" alt="" />
             <img src="src\assets\icons\mongodb.svg" alt="" />
             <img src="src\assets\icons\github.svg" alt="" />
           </div>
         </div>
-
       </div>
     </>
   );
